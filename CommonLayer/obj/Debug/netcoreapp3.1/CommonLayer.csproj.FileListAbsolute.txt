@@ -1,0 +1,9 @@
+C:\Users\Dell\DotNetProjects\CommonLayer\bin\Debug\netcoreapp3.1\CommonLayer.deps.json
+C:\Users\Dell\DotNetProjects\CommonLayer\bin\Debug\netcoreapp3.1\CommonLayer.dll
+C:\Users\Dell\DotNetProjects\CommonLayer\bin\Debug\netcoreapp3.1\CommonLayer.pdb
+C:\Users\Dell\DotNetProjects\CommonLayer\obj\Debug\netcoreapp3.1\CommonLayer.csprojAssemblyReference.cache
+C:\Users\Dell\DotNetProjects\CommonLayer\obj\Debug\netcoreapp3.1\CommonLayer.AssemblyInfoInputs.cache
+C:\Users\Dell\DotNetProjects\CommonLayer\obj\Debug\netcoreapp3.1\CommonLayer.AssemblyInfo.cs
+C:\Users\Dell\DotNetProjects\CommonLayer\obj\Debug\netcoreapp3.1\CommonLayer.csproj.CoreCompileInputs.cache
+C:\Users\Dell\DotNetProjects\CommonLayer\obj\Debug\netcoreapp3.1\CommonLayer.dll
+C:\Users\Dell\DotNetProjects\CommonLayer\obj\Debug\netcoreapp3.1\CommonLayer.pdb
