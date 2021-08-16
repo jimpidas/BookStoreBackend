@@ -9,6 +9,9 @@ namespace BusinessLayer.Interfaces
     {
         void RegisterUser(RegisterUserRequest user);
         string Login(string email, string password);
+        bool ForgotPassword(string email);
+        void ChangePassword(string email, string newPassword);
+
 
     }
 }

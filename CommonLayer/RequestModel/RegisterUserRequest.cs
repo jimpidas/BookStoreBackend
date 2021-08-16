@@ -10,7 +10,6 @@ namespace CommonLayer.RequestModel
         [Required]
         //[RegularExpression("^[A-Z]{1}[a-z]{2,}$", ErrorMessage = "Your First Name should  contain only Alphabets!")]
         public string FullName { get; set; }
-
         public string Email { get; set; }
 
         [Required(ErrorMessage = "Password is required")]

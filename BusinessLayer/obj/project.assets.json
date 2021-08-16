@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.1": {
+      "Experimental.System.Messaging/1.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Experimental.System.Messaging.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Experimental.System.Messaging.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.5.0": {
         "type": "package",
         "compile": {
@@ -393,6 +402,7 @@
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
           "CommonLayer": "1.0.0",
+          "Experimental.System.Messaging": "1.1.0",
           "Microsoft.EntityFrameworkCore": "5.0.9",
           "Microsoft.Extensions.Configuration.Abstractions": "5.0.0",
           "System.Data.SqlClient": "4.8.2",
@@ -408,6 +418,20 @@
     }
   },
   "libraries": {
+    "Experimental.System.Messaging/1.1.0": {
+      "sha512": "vub7Mtt2WFdFKTZKECVuZx6feP5kUpS9EfVy+Yu4GDfdlMwivRdX4TbdkDYS2lKqCjqzUbnxTbJei1IOqC+CnA==",
+      "type": "package",
+      "path": "experimental.system.messaging/1.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "experimental.system.messaging.1.1.0.nupkg.sha512",
+        "experimental.system.messaging.nuspec",
+        "lib/netstandard2.0/Experimental.System.Messaging.dll",
+        "lib/netstandard2.0/Experimental.System.Messaging.xml"
+      ]
+    },
     "Microsoft.CSharp/4.5.0": {
       "sha512": "kaj6Wb4qoMuH3HySFJhxwQfe8R/sJsNJnANrvv8WdFPMoNbKY5htfNscv+LHCu5ipz+49m2e+WQXpLXr9XYemQ==",
       "type": "package",
@@ -1328,11 +1352,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Dell\\DotNetProjects\\bookstorebackend\\BusinessLayer\\BusinessLayer.csproj",
+      "projectUniqueName": "C:\\Users\\Dell\\DotNetProjects\\BookstoreBackend\\BusinessLayer\\BusinessLayer.csproj",
       "projectName": "BusinessLayer",
-      "projectPath": "C:\\Users\\Dell\\DotNetProjects\\bookstorebackend\\BusinessLayer\\BusinessLayer.csproj",
+      "projectPath": "C:\\Users\\Dell\\DotNetProjects\\BookstoreBackend\\BusinessLayer\\BusinessLayer.csproj",
       "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Dell\\DotNetProjects\\bookstorebackend\\BusinessLayer\\obj\\",
+      "outputPath": "C:\\Users\\Dell\\DotNetProjects\\BookstoreBackend\\BusinessLayer\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -1349,11 +1373,11 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\Dell\\DotNetProjects\\bookstorebackend\\CommonLayer\\CommonLayer.csproj": {
-              "projectPath": "C:\\Users\\Dell\\DotNetProjects\\bookstorebackend\\CommonLayer\\CommonLayer.csproj"
+            "C:\\Users\\Dell\\DotNetProjects\\BookstoreBackend\\CommonLayer\\CommonLayer.csproj": {
+              "projectPath": "C:\\Users\\Dell\\DotNetProjects\\BookstoreBackend\\CommonLayer\\CommonLayer.csproj"
             },
-            "C:\\Users\\Dell\\DotNetProjects\\bookstorebackend\\RepositoryLayer\\RepositoryLayer.csproj": {
-              "projectPath": "C:\\Users\\Dell\\DotNetProjects\\bookstorebackend\\RepositoryLayer\\RepositoryLayer.csproj"
+            "C:\\Users\\Dell\\DotNetProjects\\BookstoreBackend\\RepositoryLayer\\RepositoryLayer.csproj": {
+              "projectPath": "C:\\Users\\Dell\\DotNetProjects\\BookstoreBackend\\RepositoryLayer\\RepositoryLayer.csproj"
             }
           }
         }
