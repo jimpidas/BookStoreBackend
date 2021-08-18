@@ -46,10 +46,6 @@ namespace BookStore.Controllers
         [HttpPost("Login")]
         public IActionResult Login(Login cred)
         {
-            if (cred == null)
-            {
-                return BadRequest("user is null.");
-            }
             var token = this.userBL.Login(cred.Email, cred.Password);
 
             UserResponse data = new UserResponse();
@@ -65,7 +61,7 @@ namespace BookStore.Controllers
             }
             else
             {
-                userFullName = data.FullName;       //data.FirstName + " " + data.LastName;
+                userFullName = data.FullName;      
                 return this.Ok(new { success = true, token = token, message = "Hello " + userFullName + ", You Logged in Successfully" });
             }
         }

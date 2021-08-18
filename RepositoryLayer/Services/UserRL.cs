@@ -112,7 +112,7 @@ namespace RepositoryLayer.Services
                 connection.Open();
                 cmd.ExecuteNonQuery();
                 string ID = (cmd.Parameters["@UserId"].Value).ToString();
-
+                //int ID = int.Parse(userId.Value.ToString());
                 connection.Close();
                 connection.Dispose();
 

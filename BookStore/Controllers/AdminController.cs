@@ -14,7 +14,7 @@ namespace BookStore.Controllers
     [ApiController]
     public class AdminController : Controller
     {
-        private readonly IAdminBL adminBL; //object IAdmin class
+        private readonly IAdminBL adminBL; 
         public AdminController(IAdminBL adminBL)
         {
             this.adminBL = adminBL;
@@ -42,7 +42,7 @@ namespace BookStore.Controllers
             }
         }
 
-        // User Login
+       
         [AllowAnonymous]
         [HttpPost("Login")]
         public IActionResult Login(AdminLogin cred)

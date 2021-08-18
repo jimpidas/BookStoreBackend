@@ -43,6 +43,21 @@ namespace BookStore
             services.AddTransient<IAdminRL, AdminRL>();
             services.AddTransient<IBookBL, BookBL>();
             services.AddTransient<IBookRL, BookRL>();
+            services.AddTransient<ICartBL, CartBL>();
+            services.AddTransient<ICartRL, CartRL>();
+            services.AddTransient<IAddressBL, AddressBL>();
+            services.AddTransient<IAddressRL, AddressRL>();
+
+
+
+            /* services.AddAuthorization(options =>
+             {
+                 options.AddPolicy("RequireAdministratorRole",
+                      policy => policy.RequireRole("Administrator"));
+                 options.AddPolicy("RequireCustomerRole",
+                      policy => policy.RequireRole("Customer"));
+             });*/
+
 
 
             services.AddAuthentication(x =>
@@ -61,6 +76,8 @@ namespace BookStore
                     ValidateAudience = false
                 };
             });
+
+
             services.AddSwaggerGen(
                 swagger =>
                 {
@@ -108,7 +125,7 @@ namespace BookStore
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Jyosmita's Bookstore Api");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My Test1 Api v1");
             });
             app.UseAuthentication();
             app.UseAuthorization();

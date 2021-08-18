@@ -23,8 +23,9 @@ namespace BookStore.Controllers
         {
             this.bookBL = bookBL;
         }
+
+        //[Authorize(Roles = Role.Admin)]
         [HttpPost]
-        
         public IActionResult AddBook(AddBooks adminbookData)
         {
             try
@@ -71,6 +72,7 @@ namespace BookStore.Controllers
             }
         }
 
+        //[Authorize(Roles = Role.Admin)]
         [HttpDelete]
         public IActionResult DeleteBookById(string id)
         {
