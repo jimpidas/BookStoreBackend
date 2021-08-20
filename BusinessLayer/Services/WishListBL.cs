@@ -11,8 +11,8 @@ namespace BusinessLayer.Services
 {
     public class WishListBL: IWishListBL
     {
-        WishListRL wishListRL;
-        public WishListBL(WishListRL wishListRL)
+        IWishListRL wishListRL;
+        public WishListBL(IWishListRL wishListRL)
         {
             this.wishListRL = wishListRL;
         }

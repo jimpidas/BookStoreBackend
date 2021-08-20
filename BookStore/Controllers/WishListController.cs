@@ -32,7 +32,7 @@ namespace BookStore.Controllers
                 if (data != null)
                 {
                   
-                    return this.Ok(new { status = "True", message = "Book Added To WishList Successfully", data });
+                    return this.Ok(new { status = "True", message = "Book Added To WishList Successfully" });
                 }
                 else
                 {
