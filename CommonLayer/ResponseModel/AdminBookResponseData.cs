@@ -12,6 +12,7 @@ namespace CommonLayer.ResponseModel
         public string Language { get; set; }
         public string Category { get; set; }
         public string Pages { get; set; }
-        public string Price { get; set; }
+        public int Price { get; set; }
+        public int Quantity { get; set; }
     }
 }

@@ -8,8 +8,8 @@ namespace CommonLayer.RequestModel
     public class OrderRequest
     {
         [Required]
-        public int CartId { get; set; }
-        [Required]
         public int AddressId { get; set; }
+        [Required]
+        public int CartId { get; set; }
     }
 }

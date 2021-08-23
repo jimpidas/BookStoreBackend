@@ -49,7 +49,7 @@ namespace RepositoryLayer.Services
                     cmd.Parameters.AddWithValue("@Role", "Customer");
                     var returnParameter = cmd.Parameters.Add("@Result", SqlDbType.Int);
                     returnParameter.Direction = ParameterDirection.ReturnValue;
-                    //connection.Open();
+                   
                     SqlDataReader dataReader = cmd.ExecuteReader();
                     var result = returnParameter.Value;
                     if (result != null && result.Equals(2))
@@ -77,7 +77,7 @@ namespace RepositoryLayer.Services
                     
                     responseData = new UserResponse
                     {
-                        //  UserId = Convert.ToInt32(dataReader["UserID"]),
+                       
                         FullName = dataReader["FullName"].ToString(),
                         MobileNo=dataReader["MobileNo"].ToString(),
                         Email = dataReader["Email"].ToString(),
@@ -112,7 +112,7 @@ namespace RepositoryLayer.Services
                 connection.Open();
                 cmd.ExecuteNonQuery();
                 string ID = (cmd.Parameters["@UserId"].Value).ToString();
-                //int ID = int.Parse(userId.Value.ToString());
+               
                 connection.Close();
                 connection.Dispose();
 

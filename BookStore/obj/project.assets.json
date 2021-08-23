@@ -6211,11 +6211,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Dell\\DotNetProjects\\BookstoreBackend\\BookStore\\BookStore.csproj",
+      "projectUniqueName": "C:\\Users\\Dell\\DotNetProjects\\bookstorebackend\\BookStore\\BookStore.csproj",
       "projectName": "BookStore",
-      "projectPath": "C:\\Users\\Dell\\DotNetProjects\\BookstoreBackend\\BookStore\\BookStore.csproj",
+      "projectPath": "C:\\Users\\Dell\\DotNetProjects\\bookstorebackend\\BookStore\\BookStore.csproj",
       "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Dell\\DotNetProjects\\BookstoreBackend\\BookStore\\obj\\",
+      "outputPath": "C:\\Users\\Dell\\DotNetProjects\\bookstorebackend\\BookStore\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -6232,11 +6232,11 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\Dell\\DotNetProjects\\BookstoreBackend\\BusinessLayer\\BusinessLayer.csproj": {
-              "projectPath": "C:\\Users\\Dell\\DotNetProjects\\BookstoreBackend\\BusinessLayer\\BusinessLayer.csproj"
+            "C:\\Users\\Dell\\DotNetProjects\\bookstorebackend\\BusinessLayer\\BusinessLayer.csproj": {
+              "projectPath": "C:\\Users\\Dell\\DotNetProjects\\bookstorebackend\\BusinessLayer\\BusinessLayer.csproj"
             },
-            "C:\\Users\\Dell\\DotNetProjects\\BookstoreBackend\\RepositoryLayer\\RepositoryLayer.csproj": {
-              "projectPath": "C:\\Users\\Dell\\DotNetProjects\\BookstoreBackend\\RepositoryLayer\\RepositoryLayer.csproj"
+            "C:\\Users\\Dell\\DotNetProjects\\bookstorebackend\\RepositoryLayer\\RepositoryLayer.csproj": {
+              "projectPath": "C:\\Users\\Dell\\DotNetProjects\\bookstorebackend\\RepositoryLayer\\RepositoryLayer.csproj"
             }
           }
         }

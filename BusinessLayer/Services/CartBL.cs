@@ -9,7 +9,7 @@ namespace BusinessLayer.Services
 {
     public class CartBL: ICartBL
     {
-        ICartRL cartRL;
+        private ICartRL cartRL;
         public CartBL(ICartRL cartRL)
         {
             this.cartRL = cartRL;
@@ -17,7 +17,14 @@ namespace BusinessLayer.Services
 
         public bool AddBookToCart(int UserId, int BookId)
         {
-            return this.cartRL.AddBookToCart(UserId, BookId);
+            try
+            {
+                return this.cartRL.AddBookToCart(UserId, BookId);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
         public List<CartBookResponse> GetListOfBooksInCart(int UserId)
@@ -26,16 +33,58 @@ namespace BusinessLayer.Services
             {
                 return this.cartRL.GetListOfBooksInCart(UserId);
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                throw new Exception(e.Message);
+                throw new Exception(ex.Message);
             }
         }
 
-
-        public bool DeleteCartById(int UserId, string id)
+        public bool AddBookQuantityintoCart(int UserId, int BookId, int quantity)
         {
-            return this.cartRL.DeleteCartById(UserId, id);
+            try
+            {
+                return this.cartRL.AddBookQuantityintoCart(UserId, BookId, quantity);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public bool IncreaseBookQuantityintoCart(int UserId, int BookId)
+        {
+            try
+            {
+                return this.cartRL.IncreaseBookQuantityintoCart(UserId, BookId);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public bool DecreaseBookQuantityintoCart(int UserId, int BookId)
+        {
+            try
+            {
+                return this.cartRL.DecreaseBookQuantityintoCart(UserId, BookId);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public bool DeleteCartById(int UserId, int id)
+        {
+            try
+            {
+                return this.cartRL.DeleteCartById(UserId, id);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
     }
 }

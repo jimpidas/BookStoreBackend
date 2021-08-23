@@ -9,84 +9,88 @@ using System.Text;
 
 namespace RepositoryLayer.Services
 {
-    public class WishListRL: IWishListRL
+    public class ReviewRL: IReviewRL
     {
         private readonly IConfiguration _configuration;
         private SqlConnection connection;
-        public WishListRL(IConfiguration configuration)
+        public ReviewRL(IConfiguration configuration)
         {
             _configuration = configuration;
 
         }
+
         public void SQLConnection()
         {
             string sqlConnectionString = _configuration.GetConnectionString("BookStoreDB");
             connection = new SqlConnection(sqlConnectionString);
         }
-        public WishListRequest AddBookToWishList(int UserId, int BookId)
+        public ReviewRequest AddReview(int bookId, int UserId, ReviewRequest review)
         {
             try
             {
-                WishListRequest wishListRequest = new WishListRequest();
+                ReviewRequest reviewRequest = new ReviewRequest();
                 SQLConnection();
-                using (SqlCommand cmd = new SqlCommand("sp_AddBookToWishList", connection))
+                using (SqlCommand cmd = new SqlCommand("sp_ReviewBackToBook", connection))
                 {
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@UserId", UserId);
-                    cmd.Parameters.AddWithValue("@BookId", BookId);
+                    cmd.Parameters.AddWithValue("@BookId", bookId);
+                    cmd.Parameters.AddWithValue("@Review", review.Review);
+                    cmd.Parameters.AddWithValue("@Feedback", review.Feedback);
                     connection.Open();
                     SqlDataReader dataReader = cmd.ExecuteReader();
                 };
-                return wishListRequest;
+                return reviewRequest;
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
-        }
 
-        public List<WishListBookResponse> GetListOfBooksInWishlist(int UserId)
+        }
+        public List<ReviewListBookResponse> GetListOfReview(int UserId)
         {
             try
             {
-                List<WishListBookResponse> bookList = null;
+                List<ReviewListBookResponse> reviewList = null;
                 SQLConnection();
-                bookList = new List<WishListBookResponse>();
-                using (SqlCommand cmd = new SqlCommand("sp_GetListOfWishList", connection))
+                reviewList = new List<ReviewListBookResponse>();
+                using (SqlCommand cmd = new SqlCommand("sp_GetListOfReview", connection))
                 {
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@UserId", UserId);
+
                     connection.Open();
                     SqlDataReader dataReader = cmd.ExecuteReader();
-                    bookList = ListBookResponseModel(dataReader);
+                    reviewList = ListBookResponseModel(dataReader);
                 };
-                return bookList;
+                return reviewList;
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
         }
-        private List<WishListBookResponse> ListBookResponseModel(SqlDataReader dataReader)
+        private List<ReviewListBookResponse> ListBookResponseModel(SqlDataReader dataReader)
         {
             try
             {
-                List<WishListBookResponse> bookList = new List<WishListBookResponse>();
-                WishListBookResponse responseData = null;
+                List<ReviewListBookResponse> bookList = new List<ReviewListBookResponse>();
+                ReviewListBookResponse responseData = null;
                 while (dataReader.Read())
                 {
-                    responseData = new WishListBookResponse
+                    responseData = new ReviewListBookResponse
                     {
                         BookId = Convert.ToInt32(dataReader["BookId"]),
                         UserId = Convert.ToInt32(dataReader["UserId"]),
-                        WishListId = Convert.ToInt32(dataReader["WishListId"]),
                         Name = dataReader["Name"].ToString(),
                         Author = dataReader["Author"].ToString(),
                         Language = dataReader["Language"].ToString(),
                         Category = dataReader["Category"].ToString(),
                         Pages = dataReader["Pages"].ToString(),
-                        Price = Convert.ToInt32(dataReader["Price"])
-
+                        Price = dataReader["Price"].ToString(),
+                        Review = Convert.ToInt32(dataReader["Review"]),
+                        Feedback = dataReader["Feedback"].ToString()
                     };
                     bookList.Add(responseData);
                 }
@@ -97,6 +101,5 @@ namespace RepositoryLayer.Services
                 throw new Exception(ex.Message);
             }
         }
-       
     }
 }

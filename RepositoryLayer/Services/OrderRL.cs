@@ -12,9 +12,6 @@ namespace RepositoryLayer.Services
     {
         private readonly IConfiguration _configuration;
         private SqlConnection connection;
-
-
-
         public OrderRL(IConfiguration configuration)
         {
             _configuration = configuration;
@@ -31,18 +28,15 @@ namespace RepositoryLayer.Services
         {
             try
             {
-
                 SQLConnection();
-                using (SqlCommand cmd = new SqlCommand("sp_AddOrder", connection))
+                using (SqlCommand cmd = new SqlCommand("PlaceOrder", connection))
                 {
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@UserId", UserId);
                     cmd.Parameters.AddWithValue("@CartId", CartId);
                     cmd.Parameters.AddWithValue("@AddressId", AddressId);
-
                     connection.Open();
                     SqlDataReader dataReader = cmd.ExecuteReader();
-
                 };
                 return false;
             }
@@ -53,7 +47,6 @@ namespace RepositoryLayer.Services
         }
         public List<OrderResponse> GetListOfOrders(int UserId)
         {
-
             try
             {
                 List<OrderResponse> bookList = null;
@@ -77,7 +70,6 @@ namespace RepositoryLayer.Services
         }
         public List<OrderResponse> GetOrders(int UserId, int CartId)
         {
-           
             try
             {
                 List<OrderResponse> bookList = null;
@@ -88,7 +80,6 @@ namespace RepositoryLayer.Services
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@UserId", UserId);
                     cmd.Parameters.AddWithValue("@CartId", CartId);
-
                     connection.Open();
                     SqlDataReader dataReader = cmd.ExecuteReader();
                     bookList = ListBookResponseModel(dataReader);
@@ -124,7 +115,8 @@ namespace RepositoryLayer.Services
                         Country = dataReader["Country"].ToString(),
                         Pincode = dataReader["Pincode"].ToString(),
                         MobileNumber = dataReader["MobileNumber"].ToString(),
-                       
+                        OrderQuantity = Convert.ToInt32(dataReader["OrderQuantity"]),
+                        TotalPrice = Convert.ToInt32(dataReader["TotalPrice"])
                     };
                     bookList.Add(responseData);
                 }
@@ -142,21 +134,16 @@ namespace RepositoryLayer.Services
                 SQLConnection();
                 using (SqlCommand cmd = new SqlCommand("sp_DeleteOrderById", connection))
                 {
-
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@OrderId", OrderId);
                     cmd.Parameters.AddWithValue("@UserId", UserId);
-
                     connection.Open();
                     SqlDataReader dataReader = cmd.ExecuteReader();
-                    
                     return true;
-                }
-
+                };
             }
             catch (Exception ex)
             {
-
                 throw new Exception(ex.Message);
             }
         }

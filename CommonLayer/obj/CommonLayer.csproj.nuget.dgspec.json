@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Dell\\DotNetProjects\\BookstoreBackend\\CommonLayer\\CommonLayer.csproj": {}
+    "C:\\Users\\Dell\\DotNetProjects\\bookstorebackend\\CommonLayer\\CommonLayer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Dell\\DotNetProjects\\BookstoreBackend\\CommonLayer\\CommonLayer.csproj": {
+    "C:\\Users\\Dell\\DotNetProjects\\bookstorebackend\\CommonLayer\\CommonLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dell\\DotNetProjects\\BookstoreBackend\\CommonLayer\\CommonLayer.csproj",
+        "projectUniqueName": "C:\\Users\\Dell\\DotNetProjects\\bookstorebackend\\CommonLayer\\CommonLayer.csproj",
         "projectName": "CommonLayer",
-        "projectPath": "C:\\Users\\Dell\\DotNetProjects\\BookstoreBackend\\CommonLayer\\CommonLayer.csproj",
+        "projectPath": "C:\\Users\\Dell\\DotNetProjects\\bookstorebackend\\CommonLayer\\CommonLayer.csproj",
         "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dell\\DotNetProjects\\BookstoreBackend\\CommonLayer\\obj\\",
+        "outputPath": "C:\\Users\\Dell\\DotNetProjects\\bookstorebackend\\CommonLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",

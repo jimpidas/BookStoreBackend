@@ -31,7 +31,7 @@ namespace BookStore.Controllers
             try
             {
                 this.userBL.RegisterUser(user);
-                string userFullName = user.FullName;//+ " " + user.LastName;
+                string userFullName = user.FullName;
 
                 return this.Ok(new { success = true, message = $"Hello {userFullName} Your Account has been Created Successfully {user.Email}" });
 
@@ -50,19 +50,15 @@ namespace BookStore.Controllers
 
             UserResponse data = new UserResponse();
 
-            string message, userFullName;
-            bool success = false;
+           
             if (token == null)
             {
-              
-                message = "Enter Valid Email & Password";
-                return Ok(new { success, message });
-
+                return Ok(new { success=false, message= "Enter Valid Email & Password" });
             }
             else
             {
-                userFullName = data.FullName;      
-                return this.Ok(new { success = true, token = token, message = "Hello " + userFullName + ", You Logged in Successfully" });
+                string userFullName = data.FullName;      
+                return this.Ok(new { success = true, token, message = "Hello " + userFullName + ", You Logged in Successfully" });
             }
         }
 

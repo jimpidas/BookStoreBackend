@@ -17,7 +17,7 @@ namespace BusinessLayer.Services
             this.bookRL = bookRL;
         }
 
-        // Add Notes
+       
         public AdminBookResponseData AddBook(int adminId, AddBooks adminbookData)
         {
             AdminBookResponseData adminbookResponseData = bookRL.AddBook(adminId, adminbookData);
@@ -37,9 +37,35 @@ namespace BusinessLayer.Services
         }
 
 
-        public bool DeleteBookById(int adminId, string id)
+        public List<AdminBookResponseData> GetListOfBooksid(int bookId)
         {
-            return this.bookRL.DeleteBookById(adminId, id);
+            try
+            {
+                return this.bookRL.GetListOfBooksid(bookId);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+
+        public bool DeleteBookById(int adminId, int bookId)
+        {
+            return this.bookRL.DeleteBookById(adminId, bookId);
+        }
+        public AdminBookResponseData UpdateBook(int bookId, int adminId, AddBooks adminbookData)
+        {
+            try
+            {
+                AdminBookResponseData adminbookResponseData = bookRL.UpdateBook(bookId, adminId, adminbookData);
+                return adminbookResponseData;
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+
         }
     }
 }

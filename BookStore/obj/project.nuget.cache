@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jCCvZmDGvgPr3stnxTXpiKO3pHzVP5d6waRg/9NU1u5DjFMkCocRgkvAsJ8AC8KJAUpBlfWFtSPO536C+UPzCA==",
+  "dgSpecHash": "Kb4kPaUo/pu7vBe/VhdTIswOYtWZPQaKD7XeH32SJ/4ItG0ZC/pAz2CHnfLrDo4Z0h1qC/oUGuljHGIQErH4jA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Dell\\DotNetProjects\\BookstoreBackend\\BookStore\\BookStore.csproj",
+  "projectFilePath": "C:\\Users\\Dell\\DotNetProjects\\bookstorebackend\\BookStore\\BookStore.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Dell\\.nuget\\packages\\experimental.system.messaging\\1.1.0\\experimental.system.messaging.1.1.0.nupkg.sha512",
     "C:\\Users\\Dell\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.18\\microsoft.aspnetcore.authentication.jwtbearer.3.1.18.nupkg.sha512",

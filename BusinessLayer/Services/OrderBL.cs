@@ -9,7 +9,7 @@ namespace BusinessLayer.Services
 {
     public class OrderBL: IOrderBL
     {
-        readonly IOrderRL orderRL;
+        IOrderRL orderRL;
         public OrderBL(IOrderRL orderRL)
         {
             this.orderRL = orderRL;
@@ -18,7 +18,16 @@ namespace BusinessLayer.Services
 
         public bool AddOrder(int UserId, int CartId, int AddressId)
         {
-            return this.orderRL.AddOrder(UserId, CartId, AddressId);
+            try
+            {
+                return this.orderRL.AddOrder(UserId, CartId, AddressId);
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+
         }
 
         public List<OrderResponse> GetListOfOrders(int UserId)
@@ -27,9 +36,9 @@ namespace BusinessLayer.Services
             {
                 return this.orderRL.GetListOfOrders(UserId);
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                throw new Exception(e.Message);
+                throw new Exception(ex.Message);
             }
         }
 
@@ -39,15 +48,24 @@ namespace BusinessLayer.Services
             {
                 return this.orderRL.GetOrders(UserId, CartId);
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                throw new Exception(e.Message);
+                throw new Exception(ex.Message);
             }
         }
 
         public bool DeleteOrderById(int UserId, int OrderId)
         {
-            return this.orderRL.DeleteOrderById(UserId, OrderId);
+            try
+            {
+                return this.orderRL.DeleteOrderById(UserId, OrderId);
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+
         }
     }
 }
