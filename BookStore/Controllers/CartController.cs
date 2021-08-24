@@ -81,8 +81,8 @@ namespace BookStore.Controllers
                 var data = this.cartBL.AddBookQuantityintoCart(UserId, BookId, quantity);
                 if (idClaim != null)
                 {
-                      
-                    return this.Ok(new { status = "True", message = "Quantity Add Cart Successfully", data });
+
+                    return this.Ok(new { status = "True", message = "Quantity Add Cart Successfully", data = true }) ;
                 }
                 else
                 {
