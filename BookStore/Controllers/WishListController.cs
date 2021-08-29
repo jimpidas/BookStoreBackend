@@ -21,7 +21,7 @@ namespace BookStore.Controllers
             
         }
 
-        [HttpPost]
+        [HttpPost("{BookId}")]
         public IActionResult AddBookToWishList(int BookId)
         {
             try

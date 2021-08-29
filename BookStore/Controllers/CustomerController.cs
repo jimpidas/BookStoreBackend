@@ -57,8 +57,9 @@ namespace BookStore.Controllers
             }
             else
             {
-                string userFullName = data.FullName;      
-                return this.Ok(new { success = true, token, message = "Hello " + userFullName + ", You Logged in Successfully" });
+                string userFullName = data.FullName;
+                string email = cred.Email;
+                return this.Ok(new { success = true, token, message = "Hello " + userFullName + ", You Logged in Successfully", email });
             }
         }
 

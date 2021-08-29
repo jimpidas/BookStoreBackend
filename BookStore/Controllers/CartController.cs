@@ -21,7 +21,7 @@ namespace BookStore.Controllers
             this.cartBL = cartBL;
         }
 
-        [HttpPost]
+        [HttpPost("{BookId}")]
         public IActionResult AddBookToCart(int BookId)
         {
             try
